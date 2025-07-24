@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sanija Bot Info</title>
+  <style>
+    body {
+      background: #000;
+      color: #0f0;
+      font-family: monospace;
+      padding: 20px;
+    }
+    pre {
+      background: #111;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔰 SANIJA BOT - CUSTOM JSON</h1>
+  <pre id="jsonDisplay">Loading...</pre>
+
+  <script>
+    fetch('main_var.json')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('jsonDisplay').textContent = JSON.stringify(data, null, 2);
+      });
+  </script>
+</body>
+</html>
